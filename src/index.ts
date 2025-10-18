@@ -1,3 +1,1 @@
-export function fn() {
-  return 'Hello, tsdown!'
-}
+export * as lib from "./lib.ts";

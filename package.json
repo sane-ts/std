@@ -32,9 +32,14 @@
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },
+  "peerDependencies": {
+    "true-myth": "^9.0.0"
+  },
   "devDependencies": {
+    "@standard-schema/spec": "^1.0.0",
     "bumpp": "^10.3.1",
     "tsdown": "^0.15.6",
+    "type-fest": "^5.1.0",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }
