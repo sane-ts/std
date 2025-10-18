@@ -1,5 +1,6 @@
 {
   "name": "@sane-ts/std",
+  "private": false,
   "version": "0.0.1",
   "description": "A starter for creating a TypeScript package.",
   "type": "module",
