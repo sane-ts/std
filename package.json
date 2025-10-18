@@ -1,0 +1,38 @@
+{
+  "name": "@sane-ts/std",
+  "version": "0.0.0",
+  "description": "A starter for creating a TypeScript package.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/sane-ts/std",
+  "bugs": {
+    "url": "https://github.com/sane-ts/std/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sane-ts/std.git"
+  },
+  "author": "Valerii Petryniak <valerii15298@gmail.com>",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "test": "vitest",
+    "ts": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "bumpp": "^10.3.1",
+    "tsdown": "^0.15.6",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}
