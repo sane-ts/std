@@ -1,7 +1,7 @@
 {
   "name": "@sane-ts/std",
   "private": false,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A starter for creating a TypeScript package.",
   "type": "module",
   "license": "MIT",
