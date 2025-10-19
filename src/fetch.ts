@@ -2,8 +2,8 @@ import type { StandardSchemaV1 } from "@standard-schema/spec";
 import * as m from "true-myth";
 import type { JsonValue } from "type-fest";
 
-import { JSON } from "./json.ts";
-import type * as t from "./types.ts";
+import { JSON } from "#json.ts";
+import type * as t from "#types.ts";
 
 export interface HttpResponse {
   headers: Record<string, string | string[]>;
