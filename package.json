@@ -38,9 +38,11 @@
   "devDependencies": {
     "@standard-schema/spec": "^1.0.0",
     "bumpp": "^10.3.1",
+    "prettier": "^3.6.2",
     "tsdown": "^0.15.6",
     "type-fest": "^5.1.0",
     "typescript": "^5.9.3",
     "vitest": "^3.2.4"
-  }
+  },
+  "prettier": {}
 }
