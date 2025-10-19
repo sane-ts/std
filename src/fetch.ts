@@ -6,7 +6,7 @@ import { JSON } from "./json.ts";
 import type * as t from "./types.ts";
 
 export interface HttpResponse {
-  headers: Record<string, string[]>;
+  headers: Record<string, string | string[]>;
   ok: boolean;
   redirected: boolean;
   status: number;
@@ -55,12 +55,14 @@ function _fetch(
     const { ok, redirected, status, statusText, type, url } = resp;
     const baseCtx = { ok, redirected, status, statusText, type, url };
 
-    const headers: Record<string, string[]> = {};
+    const headers: Record<string, string | string[]> = {};
     resp.headers.forEach((value, key) => {
-      if (!headers[key]) {
-        headers[key] = [];
-      }
-      headers[key].push(value);
+      const existing = headers[key];
+      if (existing === undefined) {
+        headers[key] = value;
+      } else if (typeof existing === "string") {
+        headers[key] = [existing, value];
+      } else existing.push(value);
     });
 
     const httpResponse: HttpResponse = {
