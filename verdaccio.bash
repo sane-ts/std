@@ -1,8 +1,8 @@
 docker compose down -v
 docker compose up -d --wait
 
-mv package.json package.json.bak
-cat package.json.bak | jq -r '.version="0.0.1-verdaccio"' > package.json
+pnpm build
+cat package.json | jq -r '.version="0.0.1-verdaccio" | .imports = { "#*.ts": "./src/*.js" } | .private = false' > dist/package.json
 
 expect <<'EOF'
   spawn pnpm login --registry http://localhost:4873
@@ -13,6 +13,5 @@ expect <<'EOF'
   expect eof
 EOF
 
+cd dist
 pnpm publish --registry http://localhost:4873 --no-git-checks --tag verdaccio
-
-mv package.json.bak package.json
