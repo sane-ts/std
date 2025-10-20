@@ -1,4 +1,5 @@
 {
+  "extends": "@tsconfig/strictest/tsconfig.json",
   "compilerOptions": {
     "target": "esnext",
     "lib": ["ESNext", "DOM"],
@@ -7,14 +8,9 @@
     "moduleResolution": "nodenext",
     "resolveJsonModule": true,
     "types": [],
-    "strict": true,
-    "noUnusedLocals": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
     "verbatimModuleSyntax": true,
-    "skipLibCheck": true,
     "allowImportingTsExtensions": true,
     "outDir": "dist/src",
     "rootDir": "src"

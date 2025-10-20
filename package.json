@@ -30,11 +30,12 @@
     "build": "rm -rf dist && tsc --noEmit && (tsc --emitDeclarationOnly false || true) && cp README.md dist/README.md"
   },
   "dependencies": {
-    "true-myth": "^9.0.0",
     "@standard-schema/spec": "^1.0.0",
+    "true-myth": "^9.0.0",
     "type-fest": "^5.1.0"
   },
   "devDependencies": {
+    "@tsconfig/strictest": "^2.0.6",
     "bumpp": "^10.3.1",
     "prettier": "^3.6.2",
     "typescript": "^5.9.3"
