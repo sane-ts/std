@@ -12,7 +12,9 @@
     "emitDeclarationOnly": true,
     "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
+    "erasableSyntaxOnly": true,
     "outDir": "dist/src",
     "rootDir": "src"
-  }
+  },
+  "include": ["src"]
 }
