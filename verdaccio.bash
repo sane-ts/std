@@ -1,8 +1,9 @@
+set -e
 docker compose down -v
 docker compose up -d --wait
 
 pnpm build
-cat package.json | jq -r '.version="0.0.1-verdaccio" | .imports = { "#*.ts": "./src/*.js" } | .private = false' > dist/package.json
+cat package.json | jq -r '.version="0.0.1-verdaccio" | .imports = { "#*.ts": "./src/*.js" }' > dist/package.json
 
 expect <<'EOF'
   spawn pnpm login --registry http://localhost:4873
