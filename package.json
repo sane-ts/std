@@ -18,7 +18,7 @@
   "types": "./src/index.d.ts",
   "typings": "./src/index.d.ts",
   "imports": {
-    "#*": "./src/*"
+    "#*": "./src/*.js"
   },
   "exports": {
     ".": "./src/index.js",
@@ -26,8 +26,8 @@
   },
   "scripts": {
     "ts": "tsc --noEmit",
-    "release": "bash release.bash",
-    "build": "rm -rf dist && tsc --noEmit && (tsc --emitDeclarationOnly false || true) && cp README.md dist/README.md"
+    "release": "pnpm build && cd dist && pnpm publish --access public",
+    "build": "rm -rf dist && tsc && cp README.md package.json dist"
   },
   "dependencies": {
     "@standard-schema/spec": "^1.0.0",

@@ -1,1 +1,1 @@
-export * as lib from "#lib.ts";
+export * as lib from "#lib";

@@ -3,18 +3,11 @@
   "compilerOptions": {
     "target": "esnext",
     "lib": ["ESNext", "DOM"],
-    "moduleDetection": "force",
     "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "resolveJsonModule": true,
-    "types": [],
     "declaration": true,
-    "emitDeclarationOnly": true,
     "verbatimModuleSyntax": true,
-    "allowImportingTsExtensions": true,
     "erasableSyntaxOnly": true,
     "outDir": "dist/src",
     "rootDir": "src"
-  },
-  "include": ["src"]
+  }
 }
