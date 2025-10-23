@@ -1,6 +1,8 @@
 set -e
-docker compose down -v
-docker compose up -d --wait
+
+docker rm -v verdaccio.localhost
+container_id=$(docker run --name verdaccio.localhost -d -p 4873:4873 verdaccio/verdaccio)
+echo "Started Verdaccio container with ID: $container_id"
 
 pnpm build
 cat package.json | jq -r '.version="0.0.1-verdaccio"' > dist/package.json
@@ -16,3 +18,5 @@ EOF
 
 cd dist
 pnpm publish --registry http://localhost:4873 --no-git-checks --tag verdaccio
+
+docker attach $container_id

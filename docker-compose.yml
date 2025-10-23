@@ -1,5 +1,0 @@
-services:
-  verdaccio.localhost:
-    image: verdaccio/verdaccio:nightly-master
-    ports:
-      - "4873:4873"
