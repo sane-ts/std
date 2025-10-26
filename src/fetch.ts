@@ -48,9 +48,7 @@ export type FetchResponse = HttpResponse & {
   json: () => m.Task<JsonValue, FetchTextErr | ParseJSONErr>;
 };
 
-function _fetch(
-  ...args: Parameters<typeof globalThis.fetch>
-): Promise<FetchResponse> {
+function _fetch(...args: Parameters<typeof globalThis.fetch>) {
   return globalThis.fetch(...args).then((resp) => {
     const { ok, redirected, status, statusText, type, url } = resp;
     const baseCtx = { ok, redirected, status, statusText, type, url };
@@ -97,7 +95,9 @@ function _fetch(
     return { ...httpResponse, text, json };
   });
 }
-export const fetch = m.task.safe(
+export const fetch: (
+  ...args: Parameters<typeof globalThis.fetch>
+) => m.Task<FetchResponse, FetchErr> = m.task.safe(
   _fetch,
   (e): FetchErr => ({ name: "FetchErr", cause: e as t.FetchError }),
 );
