@@ -1,6 +1,6 @@
 set -e
 
-docker rm -v verdaccio.localhost
+docker rm -vf verdaccio.localhost
 container_id=$(docker run --name verdaccio.localhost -d -p 4873:4873 verdaccio/verdaccio)
 echo "Started Verdaccio container with ID: $container_id"
 
