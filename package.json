@@ -17,12 +17,13 @@
   "module": "./src/index.js",
   "types": "./src/index.d.ts",
   "typings": "./src/index.d.ts",
+  "sideEffects": false,
   "imports": {
     "#*": "./src/*.js"
   },
   "exports": {
     ".": "./src/index.js",
-    "./package.json": "./package.json"
+    "./myth": "./src/myth.js"
   },
   "scripts": {
     "ts": "tsc --noEmit",
